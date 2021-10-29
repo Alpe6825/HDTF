@@ -215,7 +215,7 @@ def cut_and_crop_video(raw_video_path, output_path, start, end, crop: List[int])
         "-qscale", "0", # Preserve the quality
         "-y", # Overwrite if the file exists
         "-ss", str(start), "-to", str(end), # Cut arguments
-        "-filter:v", f'"crop={out_w}:{out_h}:{x}:{y}"', # Crop arguments
+        "-filter:v", f'"crop={out_w}:{out_h}:{x}:{y},fps=30"', # Crop arguments
         output_path
     ])
 
